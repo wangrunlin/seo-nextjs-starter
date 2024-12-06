@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     shortcut: "/icon?<generated>",
     apple: "/icon?<generated>",
   },
+  // metadataBase: new URL(
+  //   process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_VERCEL_URL || ""
+  // ),
   openGraph: {
     title,
     description,
