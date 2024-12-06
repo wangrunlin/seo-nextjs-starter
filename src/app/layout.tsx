@@ -7,6 +7,11 @@ const description = "SEO Next.js Starter";
 export const metadata: Metadata = {
   title,
   description,
+  icons: {
+    icon: "/icon?<generated>",
+    shortcut: "/icon?<generated>",
+    apple: "/icon?<generated>",
+  },
 };
 
 export default function RootLayout({
