@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+const shortName = process.env.NEXT_PUBLIC_SHORT_NAME || "";
+
 // Image metadata
 export const size = {
   width: 32,
@@ -24,7 +26,7 @@ export default function Icon() {
           color: "white",
         }}
       >
-        S
+        {shortName.slice(0, 2) || "S"}
       </div>
     ),
     // ImageResponse options
