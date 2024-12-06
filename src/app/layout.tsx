@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteName = "SEO Next.js Starter";
 const title = "SEO Next.js Starter";
 const description = "SEO Next.js Starter";
 
 export const metadata: Metadata = {
   title,
   description,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
     icon: "/icon?<generated>",
     shortcut: "/icon?<generated>",
     apple: "/icon?<generated>",
+  },
+  openGraph: {
+    title,
+    description,
+    siteName,
+    images: [
+      {
+        url: "/api/og",
+        alt: `${siteName} Open Graph Image`,
+      },
+    ],
   },
 };
 
