@@ -37,4 +37,4 @@ We welcome contributions! If you would like to contribute to this project, pleas
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://leo.mit-license.org).
