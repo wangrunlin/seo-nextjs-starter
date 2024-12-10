@@ -78,6 +78,20 @@ If you are deploying your application to Vercel, you can set environment variabl
 
 For more information on configuring environment variables in Vercel, you can refer to the [Vercel Environment Variables Documentation][Vercel Environment Variables].
 
+## Technical Details
+
+### Metadata Management
+
+In Next.js, you can manage metadata using various conventions, including `robots.ts`, `sitemap.ts`, and layout metadata in `layout.tsx`. This allows you to define how your application interacts with search engines and social media platforms. For more details, refer to the [Next.js Metadata Documentation][Next.js Metadata Documentation].
+
+### Open Graph Image Generation
+
+To optimize social media image generation, you can use the Vercel `@vercel/og` library. This library allows you to create dynamic Open Graph images using HTML and CSS, which can enhance how your content appears on social media platforms. For more information, check the [Open Graph Image Generation Documentation][Open Graph Image Generation Documentation].
+
+## SEO Resources
+
+For more information on SEO best practices and guides, check out the [Ahrefs SEO Guide][Ahrefs SEO Guide].
+
 ## Deployment
 
 You can easily deploy your application to Vercel with a single click. Click the button below to get started:
@@ -114,3 +128,6 @@ This project is licensed under the MIT License.
 [Deploy with Vercel URL]: https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter
 [Preview URL]: https://seo-nextjs-starter.vercel.app/
 [Vercel Environment Variables]: https://vercel.com/docs/projects/environment-variables
+[Next.js Metadata Documentation]: https://nextjs.org/docs/app/api-reference/file-conventions/metadata
+[Open Graph Image Generation Documentation]: https://vercel.com/docs/functions/og-image-generation
+[Ahrefs SEO Guide]: https://ahrefs.com/seo
