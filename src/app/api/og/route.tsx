@@ -1,6 +1,5 @@
+import { siteName } from "@/config";
 import { ImageResponse } from "next/og";
-// App router includes @vercel/og.
-// No need to install it.
 
 export async function GET() {
   return new ImageResponse(
@@ -18,7 +17,7 @@ export async function GET() {
           alignItems: "center",
         }}
       >
-        SEO Next.js Starter
+        {siteName}
       </div>
     ),
     {
