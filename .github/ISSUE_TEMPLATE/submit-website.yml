@@ -1,0 +1,39 @@
+name: Submit Your Website
+description: Use this template to submit your website created with the SEO Next.js Starter.
+title: "[Website Submission]: "
+labels: ["website", "submission"]
+assignees:
+  - wangrunlin
+body:
+  - type: input
+    id: website_name
+    attributes:
+      label: Website Name
+      description: What is the name of your website?
+      placeholder: e.g. My Awesome Website
+    validations:
+      required: true
+  - type: input
+    id: website_url
+    attributes:
+      label: Website URL
+      description: Please provide the URL of your website.
+      placeholder: e.g. https://myawesomewebsite.com
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Briefly describe your website and its purpose.
+      placeholder: e.g. This website is a portfolio showcasing my work.
+    validations:
+      required: false
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: Agreement
+      description: By submitting this issue, you agree to follow the project's guidelines.
+      options:
+        - label: I agree to follow the project's guidelines
+          required: true

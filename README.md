@@ -43,6 +43,17 @@ To get started with this template, follow these steps:
 4. Optionally, you can edit the `src/config.ts` file directly to set your configuration values.
 5. Run the development server with `pnpm dev`.
 
+## Who Uses This Template
+
+This template is designed for developers and teams looking to quickly set up SEO-friendly applications using Next.js. Here are some examples of projects and companies that utilize this template or similar setups:
+
+- [Toolbox Hub](https://toolbox-hub.com) - Online Toolbox | Free & Useful Online Tools Collection
+- [Stair Calculator](https://stair-calculator.net) - Stair Calculator Pro: Precise Design & Construction Measurements
+
+### Submit Your Website
+
+If you have created a project using this template and would like to share it, please submit your website link on the [Submit Your Website](https://github.com/wangrunlin/seo-nextjs-starter/issues/new?assignees=wangrunlin&labels=website%2C+submission&template=submit-website.yml&title=%5BWebsite+Submission%5D%3A+) issue.
+
 ## Environment Variables
 
 You can configure your application using environment variables. The `.env.example` file contains the following variables:
