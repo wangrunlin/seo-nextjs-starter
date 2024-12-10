@@ -4,9 +4,13 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const siteName = "SEO Next.js Starter";
-const title = "SEO Next.js Starter";
-const description = "SEO Next.js Starter";
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "SEO Next.js Starter";
+const title =
+  process.env.NEXT_PUBLIC_TITLE ||
+  "SEO Next.js Starter - A Starter Template for SEO Optimized Next.js Projects";
+const description =
+  process.env.NEXT_PUBLIC_DESCRIPTION ||
+  "A simple and easy-to-use starter template for building SEO optimized Next.js applications with best practices and performance in mind.";
 
 export const metadata: Metadata = {
   title,
@@ -24,6 +28,7 @@ export const metadata: Metadata = {
     shortcut: "/icon?<generated>",
     apple: "/icon?<generated>",
   },
+  // todo)) Vercel build error use this instead
   // metadataBase: new URL(
   //   process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_VERCEL_URL || ""
   // ),
