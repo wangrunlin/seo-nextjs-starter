@@ -3,7 +3,7 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Footer from "@/components/Footer";
-import { description, siteName, title } from "@/config";
+import { baseURL, description, siteName, title } from "@/config";
 
 export const metadata: Metadata = {
   title,
@@ -21,14 +21,15 @@ export const metadata: Metadata = {
     shortcut: "/icon?<generated>",
     apple: "/icon?<generated>",
   },
-  // todo)) Vercel build error use this instead
-  // metadataBase: new URL(
-  //   process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_VERCEL_URL || ""
-  // ),
+  alternates: {
+    canonical: baseURL,
+  },
+  metadataBase: new URL(baseURL),
   openGraph: {
     title,
     description,
     siteName,
+    url: baseURL,
     images: [
       {
         url: "/api/og",
