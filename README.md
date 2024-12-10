@@ -1,5 +1,8 @@
 # SEO Next.js Starter
 
+[![中文](https://img.shields.io/badge/中文-Click_here-brightgreen?style=for-the-badge)](README-zh.md)
+[![English](https://img.shields.io/badge/English-Click_here-brightgreen?style=for-the-badge)](README.md)
+
 [![GitHub][GitHub]][GitHub URL]
 [![GitHub stars][Stars]][Stars URL]
 [![GitHub forks][Forks]][Forks URL]
