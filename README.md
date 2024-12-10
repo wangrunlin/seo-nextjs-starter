@@ -1,12 +1,25 @@
 # SEO Next.js Starter
 
-[![GitHub stars][1]][2] [![GitHub forks][3]][4] [![GitHub issues][5]][6] [![GitHub license][7]][8] [![Last Commit][9]][10]
+[![GitHub][GitHub]][GitHub URL]
+[![GitHub stars][Stars]][Stars URL]
+[![GitHub forks][Forks]][Forks URL]
+[![GitHub issues][Issues]][Issues URL]
+[![GitHub license][License]][License URL]
+[![Last Commit][Last Commit]][Last Commit URL]
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter)
+[![use this template][Use This Template]][Use This Template URL]
+
+[![Deploy with Vercel][Deploy with Vercel]][Deploy with Vercel URL]
 
 ## Preview
 
-You can see a live preview of the application at [SEO Next.js Starter Preview](https://seo-nextjs-starter.vercel.app/).
+You can see a live preview of the application at [SEO Next.js Starter Preview][Preview URL].
+
+## Use This Template
+
+You can use this template to create your own project by clicking the button below:
+
+[![Use this template][Use This Template]][Use This Template URL]
 
 ## About This Template
 
@@ -54,7 +67,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="your-google-analytics-id"
 
 You can easily deploy your application to Vercel with a single click. Click the button below to get started:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter)
+[![Deploy with Vercel][Deploy with Vercel]][Deploy with Vercel URL]
 
 ## Documentation
 
@@ -68,13 +81,20 @@ We welcome contributions! If you would like to contribute to this project, pleas
 
 This project is licensed under the MIT License.
 
-[1]: https://img.shields.io/github/stars/wangrunlin/seo-nextjs-starter?style=for-the-badge
-[2]: https://github.com/wangrunlin/seo-nextjs-starter/stargazers
-[3]: https://img.shields.io/github/forks/wangrunlin/seo-nextjs-starter?style=for-the-badge
-[4]: https://github.com/wangrunlin/seo-nextjs-starter/forks
-[5]: https://img.shields.io/github/issues/wangrunlin/seo-nextjs-starter?style=for-the-badge
-[6]: https://github.com/wangrunlin/seo-nextjs-starter/issues
-[7]: https://img.shields.io/github/license/wangrunlin/seo-nextjs-starter?style=for-the-badge
-[8]: https://github.com/wangrunlin/seo-nextjs-starter/blob/main/LICENSE
-[9]: https://img.shields.io/github/last-commit/wangrunlin/seo-nextjs-starter?style=for-the-badge
-[10]: https://github.com/wangrunlin/seo-nextjs-starter/commits/main
+[Stars]: https://img.shields.io/github/stars/wangrunlin/seo-nextjs-starter?style=for-the-badge
+[Stars URL]: https://github.com/wangrunlin/seo-nextjs-starter/stargazers
+[Forks]: https://img.shields.io/github/forks/wangrunlin/seo-nextjs-starter?style=for-the-badge
+[Forks URL]: https://github.com/wangrunlin/seo-nextjs-starter/forks
+[Issues]: https://img.shields.io/github/issues/wangrunlin/seo-nextjs-starter?style=for-the-badge
+[Issues URL]: https://github.com/wangrunlin/seo-nextjs-starter/issues
+[License]: https://img.shields.io/github/license/wangrunlin/seo-nextjs-starter?style=for-the-badge
+[License URL]: https://github.com/wangrunlin/seo-nextjs-starter/blob/main/LICENSE
+[Last Commit]: https://img.shields.io/github/last-commit/wangrunlin/seo-nextjs-starter?style=for-the-badge
+[Last Commit URL]: https://github.com/wangrunlin/seo-nextjs-starter/commits/main
+[GitHub]: https://img.shields.io/badge/GitHub-wangrunlin%2Fseo--nextjs--starter-blue?style=for-the-badge&logo=github
+[GitHub URL]: https://github.com/wangrunlin/seo-nextjs-starter
+[Use This Template]: https://img.shields.io/badge/Use_this_template-Click_here-brightgreen?style=for-the-badge
+[Use This Template URL]: https://github.com/new?template_name=seo-nextjs-starter
+[Deploy with Vercel]: https://vercel.com/button
+[Deploy with Vercel URL]: https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter
+[Preview URL]: https://seo-nextjs-starter.vercel.app/
