@@ -11,4 +11,7 @@ export const description =
 
 // meta base url
 export const baseURL =
-  globalThis.location.origin || "https://seo-nextjs-starter.vercel.app";
+  process.env.NEXT_PUBLIC_URL ||
+  process.env.NEXT_PUBLIC_VERCEL_URL ||
+  (globalThis.location && globalThis.location.origin) ||
+  "https://seo-nextjs-starter.vercel.app";
