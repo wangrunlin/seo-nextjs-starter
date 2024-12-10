@@ -2,6 +2,7 @@ import "@/app/globals.css";
 
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const siteName = "SEO Next.js Starter";
 const title = "SEO Next.js Starter";
@@ -50,6 +51,11 @@ export default function RootLayout({
         <main>{children}</main>
 
         <Footer />
+
+        {/* <Analytics /> */}
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+        )}
       </body>
     </html>
   );
