@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteName } from "@/app/layout";
+import { siteName } from "@/config";
 
 export const metadata: Metadata = {
   title: `About | ${siteName}`,

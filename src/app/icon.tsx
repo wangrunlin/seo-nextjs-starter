@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { siteName } from "@/app/layout";
+import { siteName } from "@/config";
 
 // Image metadata
 export const size = {

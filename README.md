@@ -40,7 +40,8 @@ To get started with this template, follow these steps:
 1. Clone the repository.
 2. Install dependencies using `pnpm install`.
 3. Create a `.env` file based on the provided `.env.example` file and fill in your own values.
-4. Run the development server with `pnpm dev`.
+4. Optionally, you can edit the `src/config.ts` file directly to set your configuration values.
+5. Run the development server with `pnpm dev`.
 
 ## Environment Variables
 
@@ -62,6 +63,20 @@ NEXT_PUBLIC_URL="https://example.com"
 # <optional> if you want to use Google Analytics
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="your-google-analytics-id"
 ```
+
+## Vercel Environment Variables
+
+If you are deploying your application to Vercel, you can set environment variables directly in the Vercel dashboard. Follow these steps:
+
+1. Go to your Vercel dashboard and select your project.
+2. Navigate to the "Settings" tab.
+3. Scroll down to the "Environment Variables" section.
+4. Click on "Add" to create a new environment variable.
+5. Enter the variable name (e.g., `NEXT_PUBLIC_SITE_NAME`) and its corresponding value.
+6. Repeat this for all the environment variables you need to set.
+7. After adding the variables, redeploy your application to apply the changes.
+
+For more information on configuring environment variables in Vercel, you can refer to the [Vercel Environment Variables Documentation][Vercel Environment Variables].
 
 ## Deployment
 
@@ -98,3 +113,4 @@ This project is licensed under the MIT License.
 [Deploy with Vercel]: https://vercel.com/button
 [Deploy with Vercel URL]: https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter
 [Preview URL]: https://seo-nextjs-starter.vercel.app/
+[Vercel Environment Variables]: https://vercel.com/docs/projects/environment-variables
