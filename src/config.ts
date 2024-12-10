@@ -8,3 +8,7 @@ export const title =
 export const description =
   process.env.NEXT_PUBLIC_DESCRIPTION ||
   "A simple and easy-to-use starter template for building SEO optimized Next.js applications with best practices and performance in mind.";
+
+// meta base url
+export const baseURL =
+  globalThis.location.origin || "https://seo-nextjs-starter.vercel.app";
