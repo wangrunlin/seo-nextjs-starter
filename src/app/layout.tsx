@@ -5,6 +5,11 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Footer from "@/components/Footer";
 import { baseURL, description, siteName, title } from "@/config";
 
+// 确保 baseURL 是有效的 URL
+const validBaseURL = baseURL.startsWith("http")
+  ? baseURL
+  : `https://${baseURL}`;
+
 export const metadata: Metadata = {
   title,
   description,
@@ -24,7 +29,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseURL,
   },
-  metadataBase: new URL(baseURL),
+  metadataBase: new URL(validBaseURL),
   openGraph: {
     title,
     description,
