@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-
-const shortName = process.env.NEXT_PUBLIC_SHORT_NAME || "";
+import { siteName } from "@/app/layout";
 
 export const metadata: Metadata = {
-  title: `${shortName} | About`,
+  title: `About | ${siteName}`,
 };
 
 export default function AboutLayout({

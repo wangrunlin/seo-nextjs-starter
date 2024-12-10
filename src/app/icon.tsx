@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
-
-const shortName = process.env.NEXT_PUBLIC_SHORT_NAME || "";
+import { siteName } from "@/app/layout";
 
 // Image metadata
 export const size = {
   width: 32,
   height: 32,
 };
+
 export const contentType = "image/png";
 
 // Image generation
@@ -26,7 +26,7 @@ export default function Icon() {
           color: "white",
         }}
       >
-        {shortName.slice(0, 2) || "S"}
+        {siteName.slice(0, 2) || "S"}
       </div>
     ),
     // ImageResponse options
