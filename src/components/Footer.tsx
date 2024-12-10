@@ -1,3 +1,4 @@
+import { siteName } from "@/config";
 import Link from "next/link";
 
 export default function Footer() {
@@ -16,11 +17,15 @@ export default function Footer() {
         <Link
           className="hover:text-gray-900 dark:hover:text-gray-100"
           href="https://github.com/wangrunlin/seo-nextjs-starter"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Github
         </Link>
       </div>
-      <p>© 2024 SEO Next.js Starter</p>
+      <p className="mt-4">
+        &copy; {new Date().getFullYear()} {siteName}
+      </p>
     </footer>
   );
 }
