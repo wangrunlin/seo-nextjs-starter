@@ -137,7 +137,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="your-google-analytics-id"
 [GitHub]: https://img.shields.io/badge/GitHub-wangrunlin%2Fseo--nextjs--starter-blue?style=for-the-badge&logo=github
 [GitHub URL]: https://github.com/wangrunlin/seo-nextjs-starter
 [Use This Template]: https://img.shields.io/badge/Use_this_template-Click_here-brightgreen?style=for-the-badge
-[Use This Template URL]: https://github.com/new?template_name=seo-nextjs-starter
+[Use This Template URL]: https://github.com/new?template_name=seo-nextjs-starter&template_owner=wangrunlin
 [Deploy with Vercel]: https://vercel.com/button
 [Deploy with Vercel URL]: https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter
 [Preview URL]: https://seo-nextjs-starter.vercel.app/
