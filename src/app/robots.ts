@@ -1,14 +1,12 @@
 import type { MetadataRoute } from "next";
-
-const baseURL =
-  process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
+import { baseURL } from "@/config";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
-      disallow: "/private/",
+      allow: ["/", "/about", "/api/og", "/icon", "/sitemap.xml"],
+      disallow: ["/private/"],
     },
     sitemap: `${baseURL}/sitemap.xml`,
   };

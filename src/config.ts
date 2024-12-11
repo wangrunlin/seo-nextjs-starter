@@ -15,9 +15,7 @@ const defaultBaseURL = "https://seo-nextjs-starter.vercel.app";
 // Vercel baseURL, make sure it's a valid URL
 const VERCEL_URL =
   process.env.NEXT_PUBLIC_VERCEL_URL &&
-  process.env.NEXT_PUBLIC_VERCEL_URL.startsWith("https://")
-    ? process.env.NEXT_PUBLIC_VERCEL_URL
-    : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+  `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
 
 // meta base url
 export const baseURL =
