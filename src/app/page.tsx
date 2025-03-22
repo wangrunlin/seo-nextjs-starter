@@ -29,14 +29,14 @@ export default function Home() {
         <li>Clone the repository.</li>
         <li>
           Install dependencies using{" "}
-          <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">
+          <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded-sm">
             pnpm install
           </code>
           .
         </li>
         <li>
           Run the development server with{" "}
-          <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">
+          <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded-sm">
             pnpm dev
           </code>
           .
