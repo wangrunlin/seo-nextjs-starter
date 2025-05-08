@@ -139,7 +139,7 @@ This project is licensed under the MIT License.
 [Use This Template]: https://img.shields.io/badge/Use_this_template-Click_here-brightgreen?style=for-the-badge
 [Use This Template URL]: https://github.com/new?template_name=seo-nextjs-starter&template_owner=wangrunlin
 [Deploy with Vercel]: https://vercel.com/button
-[Deploy with Vercel URL]: https://vercel.com/import/project?template=https://github.com/wangrunlin/seo-nextjs-starter
+[Deploy with Vercel URL]: https://vercel.com/templates/next.js/seo-starter
 [Preview URL]: https://seo-nextjs-starter.vercel.app/
 [Vercel Environment Variables]: https://vercel.com/docs/projects/environment-variables
 [Next.js Metadata Documentation]: https://nextjs.org/docs/app/api-reference/file-conventions/metadata
