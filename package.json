@@ -1,6 +1,6 @@
 {
   "name": "seo-nextjs-starter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^15.2.3",
-    "next": "15.2.3",
+    "next": "15.2.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
