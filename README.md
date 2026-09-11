@@ -46,12 +46,14 @@ To get started with this template, follow these steps:
 4. Optionally, you can edit the `src/config.ts` file directly to set your configuration values.
 5. Run the development server with `pnpm dev`.
 
-## Who Uses This Template
+## Projects from the Author
 
-This template is designed for developers and teams looking to quickly set up SEO-friendly applications using Next.js. Here are some examples of projects and companies that utilize this template or similar setups:
+Explore more tools and products from the author of SEO Next.js Starter:
 
 - [Toolbox Hub](https://toolbox-hub.com) - Online Toolbox | Free & Useful Online Tools Collection
-- [Stair Calculator](https://stair-calculator.net) - Stair Calculator Pro: Precise Design & Construction Measurements
+- [H3Run](https://h3run.com) - AI video creation from text and images.
+- [H3MaxLive](https://h3maxlive.com) - Interactive AI video experiences.
+- [Image 2.5](https://image-2-5.com) - AI image creation and editing.
 
 ### Submit Your Website
 

@@ -46,12 +46,14 @@ SEO Next.js 启动模板旨在帮助开发人员快速设置一个强大且对 S
 4. 可选，您可以直接编辑 `src/config.ts` 文件以设置您的配置值。
 5. 使用 `pnpm dev` 运行开发服务器。
 
-## 谁在使用此模板
+## 作者的其他项目
 
-此模板旨在为希望快速设置 SEO 友好应用程序的开发人员和团队提供支持。以下是一些使用此模板或类似设置的项目和公司的示例：
+探索 SEO Next.js Starter 作者的其他工具与产品：
 
 - [Toolbox Hub](https://toolbox-hub.com) - 在线工具箱 | 免费且实用的在线工具集合
-- [楼梯计算器](https://stair-calculator.net) - 楼梯计算器专业版：精确设计与施工测量
+- [H3Run](https://h3run.com) - 通过文字与图片创作 AI 视频。
+- [H3MaxLive](https://h3maxlive.com) - 互动 AI 视频体验。
+- [Image 2.5](https://image-2-5.com) - AI 图片创作与编辑。
 
 ### 提交您的网站
 
