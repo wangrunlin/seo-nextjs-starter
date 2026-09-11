@@ -3,12 +3,12 @@ import { baseURL } from "@/config";
 import { pageMetadata } from "@/lib/seo";
 export const metadata = {
   ...pageMetadata(
-    "Documentation",
-    "/docs",
-    "Set up your Next.js site, configure metadata and indexing, and inspect working SEO examples.",
+    "中文文档",
+    "/docs/zh",
+    "配置 Next.js 网站的 metadata、索引、分享图与示例，验证实际 SEO 输出。",
   ),
   alternates: {
-    canonical: `${baseURL}/docs`,
+    canonical: `${baseURL}/docs/zh`,
     languages: {
       en: `${baseURL}/docs`,
       "zh-CN": `${baseURL}/docs/zh`,
@@ -17,5 +17,5 @@ export const metadata = {
   },
 };
 export default function Docs() {
-  return <DocsPage language="en" />;
+  return <DocsPage language="zh" />;
 }

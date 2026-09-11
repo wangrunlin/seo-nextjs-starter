@@ -14,117 +14,122 @@
 
 [![Deploy with Vercel][Deploy with Vercel]][Deploy with Vercel URL]
 
-## Preview
+A head start for your next search result. An open-source Next.js starter with page metadata, sitemaps, social images, and practical examples you can inspect and adapt.
 
-You can see a live preview of the application at [SEO Next.js Starter Preview][Preview URL].
+[Live demo](https://seo-nextjs.alin.run) · [Documentation](https://seo-nextjs.alin.run/docs) · [Examples](https://seo-nextjs.alin.run/examples) · [Vercel template](https://vercel.com/templates/next.js/seo-starter)
 
-## Use This Template
+[![SEO Next.js Starter homepage](public/thumbnail.png)](https://seo-nextjs.alin.run)
 
-You can use this template to create your own project by clicking the button below:
+## What ships with v1
 
-[![Use this template][Use This Template]][Use This Template URL]
+- **Page-specific SEO:** titles, descriptions, canonical URLs, Open Graph, and Twitter cards through one metadata helper.
+- **Production-aware indexing:** route-based sitemap, robots, local/Preview noindex, and an explicit production URL.
+- **Dynamic social images:** 1200 × 630 PNG images generated with `next/og`, plus a matching icon.
+- **Inspectable examples:** a journal with static articles and dynamic metadata, plus a product page with a working launch checklist.
+- **Structured data:** WebSite, SoftwareSourceCode, Article, and BreadcrumbList examples with escaped JSON-LD output.
+- **Bilingual documentation:** English and Chinese routes with reciprocal hreflang, working legacy README redirects, and readable code blocks.
+- **Responsive design:** light/dark themes, keyboard navigation, interactive SEO previews, and author project cards.
+- **Repeatable checks:** ESLint, TypeScript, Node tests, production build, and HTTP SEO assertions in GitHub Actions.
 
-## About This Template
+Built with **Next.js 16, React 19, TypeScript 5, Tailwind CSS 4, Node.js 22, and pnpm 11**. This is a set of SEO foundations, not a promise of rankings or a particular performance score.
 
-The SEO Next.js Starter is designed to help developers quickly set up a robust and SEO-friendly web application using Next.js. This template provides a solid foundation for building applications that are optimized for search engines and performance.
+## Quickstart
 
-### Features
+Create a repository with the **Use this template** button above, then clone your new repository:
 
-- Server-side rendering for better SEO
-- Static site generation for fast performance
-- Dynamic routing for flexible navigation
-- Built-in CSS and Sass support
-- API routes for backend functionality
-
-## Getting Started with This Template
-
-To get started with this template, follow these steps:
-
-1. Clone the repository.
-2. Install dependencies using `pnpm install`.
-3. Create a `.env` file based on the provided `.env.example` file and fill in your own values.
-4. Optionally, you can edit the `src/config.ts` file directly to set your configuration values.
-5. Run the development server with `pnpm dev`.
-
-## Projects from the Author
-
-Explore more tools and products from the author of SEO Next.js Starter:
-
-- [Toolbox Hub](https://toolbox-hub.com) - Online Toolbox | Free & Useful Online Tools Collection
-- [H3Run](https://h3run.com) - AI video creation from text and images.
-- [H3MaxLive](https://h3maxlive.com) - Interactive AI video experiences.
-- [Image 2.5](https://image-2-5.com) - AI image creation and editing.
-
-### Submit Your Website
-
-If you have created a project using this template and would like to share it, please submit your website link on the [Submit Your Website](https://github.com/wangrunlin/seo-nextjs-starter/issues/new?assignees=wangrunlin&labels=website%2C+submission&template=submit-website.yml&title=%5BWebsite+Submission%5D%3A+) issue.
-
-## Environment Variables
-
-You can configure your application using environment variables. The `.env.example` file contains the following variables:
-
-```dotenv
-# replace with your own site name
-NEXT_PUBLIC_SITE_NAME="SEO Next.js Starter"
-
-# replace with your own title
-NEXT_PUBLIC_TITLE="SEO Next.js Starter - A Starter Template for SEO Optimized Next.js Projects"
-
-# replace with your own description
-NEXT_PUBLIC_DESCRIPTION="A simple and easy-to-use starter template for building SEO optimized Next.js applications with best practices and performance in mind."
-
-# replace with your own URL
-NEXT_PUBLIC_URL="https://example.com"
-
-# <optional> if you want to use Google Analytics
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="your-google-analytics-id"
+```bash
+# Node.js 22.x; install pnpm 11.24.0 if needed
+npm install --global pnpm@11.24.0
+pnpm install --frozen-lockfile
+cp .env.example .env.local
+pnpm dev
 ```
 
-## Vercel Environment Variables
+Open [localhost:3000](http://localhost:3000). No account, database, or analytics service is needed to run the examples.
 
-If you are deploying your application to Vercel, you can set environment variables directly in the Vercel dashboard. Follow these steps:
+## Site configuration
 
-1. Go to your Vercel dashboard and select your project.
-2. Navigate to the "Settings" tab.
-3. Scroll down to the "Environment Variables" section.
-4. Click on "Add" to create a new environment variable.
-5. Enter the variable name (e.g., `NEXT_PUBLIC_SITE_NAME`) and its corresponding value.
-6. Repeat this for all the environment variables you need to set.
-7. After adding the variables, redeploy your application to apply the changes.
+Set these in `.env.local` for development and in your deployment environment for production:
 
-For more information on configuring environment variables in Vercel, you can refer to the [Vercel Environment Variables Documentation][Vercel Environment Variables].
+```dotenv
+NEXT_PUBLIC_SITE_NAME="Your site"
+NEXT_PUBLIC_TITLE="Your page title"
+NEXT_PUBLIC_DESCRIPTION="A useful description of your website."
+NEXT_PUBLIC_URL="https://example.com"
+# Optional: set false to opt out of indexing
+# NEXT_PUBLIC_INDEXABLE="false"
+# Optional: your own GA measurement ID; leave unset to disable analytics
+# NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="G-XXXXXXXXXX"
+```
 
-## Technical Details
+`NEXT_PUBLIC_URL` must be an HTTP(S) origin without a path, query, or credentials. Configure your real production domain before publishing. If omitted, Vercel deployments resolve their own project domain; local development falls back to `http://localhost:3000`. Preview deployments remain noindex even when the production URL is configured. Noindex pages allow crawling so robots can read that directive.
 
-### Metadata Management
+Add a page's metadata in its server component:
 
-In Next.js, you can manage metadata using various conventions, including `robots.ts`, `sitemap.ts`, and layout metadata in `layout.tsx`. This allows you to define how your application interacts with search engines and social media platforms. For more details, refer to the [Next.js Metadata Documentation][Next.js Metadata Documentation].
+```tsx
+import { pageMetadata } from "@/lib/seo";
 
-### Open Graph Image Generation
+export const metadata = pageMetadata(
+  "About us",
+  "/about",
+  "Learn about the people and ideas behind our website.",
+);
+```
 
-To optimize social media image generation, you can use the Vercel `@vercel/og` library. This library allows you to create dynamic Open Graph images using HTML and CSS, which can enhance how your content appears on social media platforms. For more information, check the [Open Graph Image Generation Documentation][Open Graph Image Generation Documentation].
+When adding or removing pages, also update `src/app/sitemap.ts`. Customize `src/config.ts`, the examples, and the author cards for your own project. The homepage preview is illustrative; search engines can rewrite titles and snippets.
 
-## SEO Resources
-
-For more information on SEO best practices and guides, check out the [Ahrefs SEO Guide][Ahrefs SEO Guide].
-
-## Deployment
-
-You can easily deploy your application to Vercel with a single click. Click the button below to get started:
+## Deploy on Vercel
 
 [![Deploy with Vercel][Deploy with Vercel]][Deploy with Vercel URL]
 
-## Documentation
+1. Create your own repository and Vercel project with the button.
+2. Set `NEXT_PUBLIC_URL` to your production origin and customize your site name, title, and description. Add your custom domain in Vercel if using one.
+3. Deploy, then inspect `/sitemap.xml`, `/robots.txt`, and `/api/og`. Check the rendered HTML for canonical and social tags.
+4. After changing environment variables, redeploy. Keep Preview deployments noindex; do not copy the demo's domain or analytics ID into your project.
 
-For more information, check the official Next.js documentation at [nextjs.org/docs](https://nextjs.org/docs).
+The maintained demo is [seo-nextjs.alin.run](https://seo-nextjs.alin.run); the existing [Vercel demo URL](https://seo-nextjs-starter.vercel.app) also remains available. The [marketplace listing](https://vercel.com/templates/next.js/seo-starter) is maintained separately from Git deployments.
 
-## Contributing
+## Check your changes
 
-We welcome contributions! If you would like to contribute to this project, please follow the guidelines in the repository.
+```bash
+pnpm check        # lint, route types, TypeScript, tests, production build
+pnpm start        # in a second terminal
+pnpm test:seo     # checks actual HTTP responses at localhost:3000
+# Optional: SEO_CHECK_URL=https://your-site.com pnpm test:seo
+```
+
+The HTTP checks cover example routes, canonical and sharing metadata, document language alternates, sitemap/robots, PNG assets, redirects, 404 responses, and the bundled author links. Adapt the route and author-link expectations when you customize the template. See [migration notes](MIGRATION.md) and the [changelog](CHANGELOG.md) when upgrading from 0.2.x.
+
+## Project map
+
+| Path                              | Purpose                              |
+| --------------------------------- | ------------------------------------ |
+| `src/config.ts`                   | Site identity and resolved URL       |
+| `src/lib/seo.ts`                  | Page metadata and breadcrumb helpers |
+| `src/app/sitemap.ts`, `robots.ts` | Discovery and indexing policy        |
+| `src/app/api/og/route.tsx`        | Dynamic social PNG                   |
+| `src/content/articles.ts`         | Journal example content              |
+| `src/content/docs.*.md`           | Bilingual website documentation      |
+| `tests/`, `scripts/check-seo.mjs` | Configuration and HTTP checks        |
+
+## Projects from the Author
+
+A few other tools and creative experiments by [Leo Wang](https://alin.run):
+
+- [Toolbox Hub](https://toolbox-hub.com) — Free online tools.
+- [H3Run](https://h3run.com) — AI video creation.
+- [H3MaxLive](https://h3maxlive.com) — Interactive AI video.
+- [Image 2.5](https://image-2-5.com) — AI image creation and editing.
+
+These are author projects, not claims that they use this starter. You can remove or replace the showcase in your own site; keep the copyright and license notice as required by the MIT license.
+
+## Share what you build
+
+Have a project built with this template? [Submit your website](https://github.com/wangrunlin/seo-nextjs-starter/issues/new?template=submit-website.yml) or [report an issue](https://github.com/wangrunlin/seo-nextjs-starter/issues). Contributions are welcome; run the checks and keep changes focused. Commit messages follow this public repository's English Conventional Commits style.
 
 ## License
 
-This project is licensed under the MIT License.
+[MIT](LICENSE). Free to use, modify, and build on.
 
 [Stars]: https://img.shields.io/github/stars/wangrunlin/seo-nextjs-starter?style=for-the-badge
 [Stars URL]: https://github.com/wangrunlin/seo-nextjs-starter/stargazers
@@ -141,8 +146,8 @@ This project is licensed under the MIT License.
 [Use This Template]: https://img.shields.io/badge/Use_this_template-Click_here-brightgreen?style=for-the-badge
 [Use This Template URL]: https://github.com/new?template_name=seo-nextjs-starter&template_owner=wangrunlin
 [Deploy with Vercel]: https://vercel.com/button
-[Deploy with Vercel URL]: https://vercel.com/templates/next.js/seo-starter
-[Preview URL]: https://seo-nextjs-starter.vercel.app/
+[Deploy with Vercel URL]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwangrunlin%2Fseo-nextjs-starter&env=NEXT_PUBLIC_URL
+[Preview URL]: https://seo-nextjs.alin.run/
 [Vercel Environment Variables]: https://vercel.com/docs/projects/environment-variables
 [Next.js Metadata Documentation]: https://nextjs.org/docs/app/api-reference/file-conventions/metadata
 [Open Graph Image Generation Documentation]: https://vercel.com/docs/functions/og-image-generation

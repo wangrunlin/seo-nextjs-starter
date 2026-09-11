@@ -1,31 +1,40 @@
 {
   "name": "seo-nextjs-starter",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "test:seo": "node scripts/check-seo.mjs",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
-    "@next/third-parties": "^15.2.3",
-    "next": "15.2.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@next/third-parties": "16.3.4",
+    "lucide-react": "1.44.0",
+    "next": "16.3.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.0.15",
-    "@types/node": "^22.13.11",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "eslint": "^9.23.0",
-    "eslint-config-next": "15.2.3",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.15",
-    "typescript": "^5.8.2"
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^22.20.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.3.4",
+    "postcss": "8.5.28",
+    "tailwindcss": "4.3.3",
+    "typescript": "~5.9.3"
+  },
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": "22.x",
+    "pnpm": ">=11 <12"
   }
 }

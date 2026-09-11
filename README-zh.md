@@ -10,121 +10,126 @@
 [![GitHub license][License]][License URL]
 [![Last Commit][Last Commit]][Last Commit URL]
 
-[![使用此模板][Use This Template]][Use This Template URL]
+[![use this template][Use This Template]][Use This Template URL]
+
+[![Deploy with Vercel][Deploy with Vercel]][Deploy with Vercel URL]
+
+为你的下一个搜索结果打好基础。一个开源 Next.js 启动模板，内置页面元数据、站点地图、社交分享图，以及可检查、可修改的实用示例。
+
+[在线演示](https://seo-nextjs.alin.run) · [中文文档](https://seo-nextjs.alin.run/docs/zh) · [示例](https://seo-nextjs.alin.run/examples) · [Vercel 模板](https://vercel.com/templates/next.js/seo-starter)
+
+[![SEO Next.js Starter 首页](public/thumbnail.png)](https://seo-nextjs.alin.run)
+
+## v1 包含什么
+
+- **逐页 SEO：** 通过一个 metadata helper 生成标题、描述、canonical、Open Graph 和 Twitter 分享卡。
+- **区分生产环境的索引策略：** 按路由生成 sitemap、robots，本地和 Preview 使用 noindex，并明确配置生产域名。
+- **动态社交图片：** 使用 `next/og` 生成 1200 × 630 PNG，并提供配套图标。
+- **可检查的示例：** 带静态文章和动态 metadata 的内容站，以及带可操作上线检查表的产品页。
+- **结构化数据：** WebSite、SoftwareSourceCode、Article、BreadcrumbList 示例，JSON-LD 输出经过转义。
+- **双语文档：** 英文与中文独立路由、双向 hreflang、旧 README 路由重定向和易读代码块。
+- **响应式设计：** 深浅色主题、键盘导航、交互式 SEO 预览及作者项目卡片。
+- **可重复检查：** GitHub Actions 执行 ESLint、TypeScript、Node 测试、生产构建和 HTTP SEO 断言。
+
+采用 **Next.js 16、React 19、TypeScript 5、Tailwind CSS 4、Node.js 22 和 pnpm 11**。模板提供 SEO 基础配置，不承诺搜索排名或某个性能分数。
+
+## 快速开始
+
+点击上方 **Use this template** 创建自己的仓库，再克隆新仓库：
+
+```bash
+# 使用 Node.js 22.x；尚未安装 pnpm 时执行第一行
+npm install --global pnpm@11.24.0
+pnpm install --frozen-lockfile
+cp .env.example .env.local
+pnpm dev
+```
+
+打开 [localhost:3000](http://localhost:3000)。运行示例不需要账号、数据库或分析服务。
+
+## 站点配置
+
+本地写入 `.env.local`，生产环境在部署平台设置：
+
+```dotenv
+NEXT_PUBLIC_SITE_NAME="你的网站"
+NEXT_PUBLIC_TITLE="你的页面标题"
+NEXT_PUBLIC_DESCRIPTION="准确说明网站内容的一段描述。"
+NEXT_PUBLIC_URL="https://example.com"
+# 可选：设为 false 关闭索引
+# NEXT_PUBLIC_INDEXABLE="false"
+# 可选：你自己的 GA ID；不设置则不加载分析
+# NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="G-XXXXXXXXXX"
+```
+
+`NEXT_PUBLIC_URL` 必须是 HTTP(S) origin，不能带路径、查询参数或账号密码。公开发布前配置真实生产域名。省略时，Vercel 部署使用自己的项目域名；本地默认 `http://localhost:3000`。即使配置了正式域名，Preview 仍然使用 noindex。noindex 页面允许抓取，以便爬虫读取该指令。
+
+在页面的服务端组件中设置 metadata：
+
+```tsx
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata(
+  "关于我们",
+  "/about",
+  "了解这个网站背后的团队与想法。",
+);
+```
+
+新增或删除页面时，同步维护 `src/app/sitemap.ts`。根据自己的项目修改 `src/config.ts`、示例与作者卡片。首页预览仅用于演示；搜索引擎可能重写标题和摘要。
+
+## 部署到 Vercel
 
 [![使用 Vercel 部署][Deploy with Vercel]][Deploy with Vercel URL]
 
-## 预览
+1. 点击按钮创建自己的仓库与 Vercel 项目。
+2. 将 `NEXT_PUBLIC_URL` 设置为生产 origin，修改站名、标题与描述。使用自定义域名时，先在 Vercel 添加域名。
+3. 部署后检查 `/sitemap.xml`、`/robots.txt` 和 `/api/og`，并查看 HTML 中的 canonical 与分享标签。
+4. 环境变量更改后重新部署。Preview 保持 noindex；不要把演示站的域名或分析 ID 复制到自己的项目。
 
-您可以在 [SEO Next.js 启动模板预览][Preview URL] 查看应用程序的实时预览。
+维护中的演示站是 [seo-nextjs.alin.run](https://seo-nextjs.alin.run)，原有 [Vercel 演示地址](https://seo-nextjs-starter.vercel.app) 同样保留。[模板收录页](https://vercel.com/templates/next.js/seo-starter) 的维护独立于 Git 自动部署。
 
-## 使用此模板
+## 检查修改
 
-您可以通过点击下面的按钮使用此模板创建自己的项目：
+```bash
+pnpm check        # lint、路由类型、TypeScript、测试、生产构建
+pnpm start        # 在第二个终端启动
+pnpm test:seo     # 检查 localhost:3000 的真实 HTTP 响应
+# 可选：SEO_CHECK_URL=https://your-site.com pnpm test:seo
+```
 
-[![使用此模板][Use This Template]][Use This Template URL]
+HTTP 检查覆盖示例路由、canonical、分享信息、双语文档关联、sitemap/robots、PNG 资源、重定向、404 和内置作者外链。定制模板后，相应调整路由与作者链接断言。从 0.2.x 升级请阅读[迁移说明](MIGRATION.md)及[更新日志](CHANGELOG.md)。
 
-## 关于此模板
+## 文件导航
 
-SEO Next.js 启动模板旨在帮助开发人员快速设置一个强大且对 SEO 友好的 Web 应用程序，使用 Next.js。此模板为构建优化搜索引擎和性能的应用程序提供了坚实的基础。
-
-### 特性
-
-- 服务器端渲染以提高 SEO
-- 静态站点生成以实现快速性能
-- 动态路由以实现灵活导航
-- 内置 CSS 和 Sass 支持
-- API 路由以实现后端功能
-
-## 使用此模板的入门指南
-
-要开始使用此模板，请按照以下步骤操作：
-
-1. 克隆仓库。
-2. 使用 `pnpm install` 安装依赖。
-3. 根据提供的 `.env.example` 文件创建 `.env` 文件并填写您自己的值。
-4. 可选，您可以直接编辑 `src/config.ts` 文件以设置您的配置值。
-5. 使用 `pnpm dev` 运行开发服务器。
+| 路径                              | 用途                          |
+| --------------------------------- | ----------------------------- |
+| `src/config.ts`                   | 站点身份及 URL 解析           |
+| `src/lib/seo.ts`                  | 逐页 metadata 与面包屑 helper |
+| `src/app/sitemap.ts`、`robots.ts` | 页面发现与索引策略            |
+| `src/app/api/og/route.tsx`        | 动态分享 PNG                  |
+| `src/content/articles.ts`         | 文章示例内容                  |
+| `src/content/docs.*.md`           | 双语网站文档                  |
+| `tests/`、`scripts/check-seo.mjs` | 配置与 HTTP 检查              |
 
 ## 作者的其他项目
 
-探索 SEO Next.js Starter 作者的其他工具与产品：
+[Leo Wang](https://alin.run) 的其他工具与创作项目：
 
-- [Toolbox Hub](https://toolbox-hub.com) - 在线工具箱 | 免费且实用的在线工具集合
-- [H3Run](https://h3run.com) - 通过文字与图片创作 AI 视频。
-- [H3MaxLive](https://h3maxlive.com) - 互动 AI 视频体验。
-- [Image 2.5](https://image-2-5.com) - AI 图片创作与编辑。
+- [Toolbox Hub](https://toolbox-hub.com) — 免费在线工具。
+- [H3Run](https://h3run.com) — AI 视频创作。
+- [H3MaxLive](https://h3maxlive.com) — 互动 AI 视频。
+- [Image 2.5](https://image-2-5.com) — AI 图片创作与编辑。
 
-### 提交您的网站
+这里展示作者项目，不代表这些项目使用了本模板。你可以在自己的网站中删除或替换展示区；按 MIT 许可要求保留版权与许可声明即可。
 
-如果您使用此模板创建了项目并希望分享，请在 [提交您的网站](https://github.com/wangrunlin/seo-nextjs-starter/issues/new?assignees=wangrunlin&labels=website%2C+submission&template=submit-website.yml&title=%5BWebsite+Submission%5D%3A+) 问题中提交您的网站链接。
+## 分享你的作品
 
-## 环境变量
+使用本模板做了项目？欢迎[提交网站](https://github.com/wangrunlin/seo-nextjs-starter/issues/new?template=submit-website.yml)或[报告问题](https://github.com/wangrunlin/seo-nextjs-starter/issues)。欢迎贡献，请运行检查并保持改动聚焦。本公开仓库的提交信息延续英文 Conventional Commits 风格。
 
-您可以使用环境变量配置您的应用程序。`.env.example` 文件包含以下变量：
+## 许可
 
-```dotenv
-# 替换为您自己的网站名称
-NEXT_PUBLIC_SITE_NAME="SEO Next.js 启动模板"
-
-# 替换为您自己的标题
-NEXT_PUBLIC_TITLE="SEO Next.js 启动模板 - 一个为 SEO 优化的 Next.js 项目启动模板"
-
-# 替换为您自己的描述
-NEXT_PUBLIC_DESCRIPTION="一个简单易用的启动模板，用于构建符合最佳实践和性能的 SEO 优化 Next.js 应用程序。"
-
-# 替换为您自己的 URL
-NEXT_PUBLIC_URL="https://example.com"
-
-# <可选> 如果您想使用 Google Analytics
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="your-google-analytics-id"
-```
-
-## Vercel 环境变量
-
-如果您将应用程序部署到 Vercel，您可以直接在 Vercel 仪表板中设置环境变量。请按照以下步骤操作：
-
-1. 转到您的 Vercel 仪表板并选择您的项目。
-2. 导航到“设置”选项卡。
-3. 向下滚动到“环境变量”部分。
-4. 点击“添加”以创建新的环境变量。
-5. 输入变量名称（例如，`NEXT_PUBLIC_SITE_NAME`）及其对应值。
-6. 对所有需要设置的环境变量重复此操作。
-7. 添加变量后，重新部署您的应用程序以应用更改。
-
-有关在 Vercel 中配置环境变量的更多信息，请参阅 [Vercel 环境变量文档][Vercel Environment Variables]。
-
-## 技术细节
-
-### 元数据管理
-
-在 Next.js 中，您可以使用各种约定管理元数据，包括 `robots.ts`、`sitemap.ts` 和 `layout.tsx` 中的布局元数据。这使您能够定义应用程序如何与搜索引擎和社交媒体平台交互。有关更多详细信息，请参阅 [Next.js 元数据文档][Next.js Metadata Documentation]。
-
-### Open Graph 图像生成
-
-为了优化社交媒体图像生成，您可以使用 Vercel 的 `@vercel/og` 库。此库允许您使用 HTML 和 CSS 创建动态 Open Graph 图像，从而增强您的内容在社交媒体平台上的展示效果。有关更多信息，请查看 [Open Graph 图像生成文档][Open Graph Image Generation Documentation]。
-
-## SEO 资源
-
-有关 SEO 最佳实践和指南的更多信息，请查看 [Ahrefs SEO 指南][Ahrefs SEO Guide]。
-
-## 部署
-
-您可以通过单击按钮轻松将应用程序部署到 Vercel。点击下面的按钮开始：
-
-[![使用 Vercel 部署][Deploy with Vercel]][Deploy with Vercel URL]
-
-## 文档
-
-有关更多信息，请查看官方 Next.js 文档 [nextjs.org/docs](https://nextjs.org/docs)。
-
-## 贡献
-
-我们欢迎贡献！如果您想为此项目做出贡献，请遵循仓库中的指南。
-
-## 许可证
-
-此项目根据 MIT 许可证进行许可。
+[MIT](LICENSE)。可自由使用、修改并在此基础上构建。
 
 [Stars]: https://img.shields.io/github/stars/wangrunlin/seo-nextjs-starter?style=for-the-badge
 [Stars URL]: https://github.com/wangrunlin/seo-nextjs-starter/stargazers
@@ -141,8 +146,8 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="your-google-analytics-id"
 [Use This Template]: https://img.shields.io/badge/Use_this_template-Click_here-brightgreen?style=for-the-badge
 [Use This Template URL]: https://github.com/new?template_name=seo-nextjs-starter&template_owner=wangrunlin
 [Deploy with Vercel]: https://vercel.com/button
-[Deploy with Vercel URL]: https://vercel.com/templates/next.js/seo-starter
-[Preview URL]: https://seo-nextjs-starter.vercel.app/
+[Deploy with Vercel URL]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwangrunlin%2Fseo-nextjs-starter&env=NEXT_PUBLIC_URL
+[Preview URL]: https://seo-nextjs.alin.run/
 [Vercel Environment Variables]: https://vercel.com/docs/projects/environment-variables
 [Next.js Metadata Documentation]: https://nextjs.org/docs/app/api-reference/file-conventions/metadata
 [Open Graph Image Generation Documentation]: https://vercel.com/docs/functions/og-image-generation

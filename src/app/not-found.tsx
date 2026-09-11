@@ -1,20 +1,23 @@
 import Link from "next/link";
-
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)] bg-white dark:bg-gray-800">
-      <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-        Not Found
-      </h2>
-      <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-        Could not find requested resource
+    <main id="main" className="shell section">
+      <span className="eyebrow">404 / NOT FOUND</span>
+      <h1>
+        This page took
+        <br />a different route.
+      </h1>
+      <p style={{ marginTop: 22 }}>
+        The address may have changed, or the page does not exist.
       </p>
-      <Link
-        href="/"
-        className="text-blue-500 hover:underline dark:text-blue-400"
-      >
-        Return Home
-      </Link>
-    </div>
+      <div className="hero-buttons">
+        <Link className="button button-blue" href="/">
+          Back to home
+        </Link>
+        <Link className="button button-outline" href="/docs">
+          Open documentation
+        </Link>
+      </div>
+    </main>
   );
 }
