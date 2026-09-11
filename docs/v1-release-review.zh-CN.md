@@ -30,4 +30,25 @@
 
 ## 外部发布状态
 
-待记录最终提交、CI、Preview、生产 SHA、Release 与 Vercel 模板条目结果。此处不把本地构建成功当作已上线。
+- 功能提交：`003978acef9e4cdbccc9f6b0bbf9d4ae149bbb37`，已推送 main；提交标题为英文 Conventional Commits。
+- GitHub CI：候选 [34560442138](https://github.com/wangrunlin/seo-nextjs-starter/actions/runs/34560442138) 与 main [34560553382](https://github.com/wangrunlin/seo-nextjs-starter/actions/runs/34560553382) 均成功。
+- Vercel Preview：`dpl_AKXQMR3iLT7ZKwKSG6gyWRB74dcF`，Ready，SHA 对应功能提交。通过已登录浏览器核验 noindex、逐页 canonical 与文档 hreflang；匿名请求会进入 Vercel 认证页，因此不把匿名脚本错误视为站点 SEO 错误，也未关闭保护。
+- Vercel Production：`dpl_9yJKVoJpibdPaonHXDoxETBvmGbS`，Ready，SHA 对应功能提交。公开 https://seo-nextjs.alin.run 的 137 项 HTTP SEO 检查通过，生产 indexable=true。
+- 原演示别名 `seo-nextjs-starter.vercel.app` 与 `seo-nextjs.wangrunlin.com` 均在平台层 308 到 `seo-nextjs.alin.run`；curl 已验证 `/docs/zh?ref=verification` 的路径及参数保留。
+- [GitHub Release v1.0.0](https://github.com/wangrunlin/seo-nextjs-starter/releases/tag/v1.0.0) 已发布，标记对应功能提交。仓库简介与 homepage 同步更新。
+- 英文/中文 README 与实际站点均保留三条项目链接。浏览器已确认 H3Run 与 Image 2.5 图标完成加载，普通作者外链为 `noopener noreferrer`。
+- Vercel 原收录页仍显示旧 Stair 链接、标题和缩略图。尚未同步；完整英文请求及中文对照见 `relaunch-copy.zh-CN.md`。发送 Support 请求/创建工单的明确授权待用户回复。
+
+## 性能检查的实际范围
+
+公开首页单次 curl：HTTP 200，首字节约 0.488 秒，总响应约 0.542 秒，压缩传输 9,762 字节。该样本来自本机网络，不能当作 CWV 或 Lighthouse 分数。
+
+PageSpeed Insights 公共 API 返回配额耗尽；可用浏览器接口不支持 PerformanceTimeline 方法。因此没有取得可报告的 Lighthouse、LCP、CLS 或 INP 数据。代码保留静态生成、系统字体、延迟加载的固定尺寸作者图片；没有为了一个未取得的分数扩大重构。浏览器交互与实际资源加载已检查。
+
+## Release 正文中文译文
+
+SEO Next.js Starter v1.0 将 SEO 配置和它描述的页面整合在同一个可检查的模板中。版本采用 Next.js 16.3.4、React 19.3.0、Tailwind 4.3.3、Node 22 和 pnpm 11；提供新的响应式深浅色首页、可编辑 SEO 预览、可运行的文章与产品示例、逐页 canonical 与分享信息、动态 PNG、JSON-LD、sitemap/robots 和 Preview noindex。
+
+同时提供英中文档、真实首页截图、迁移说明，以及 H3Run、H3MaxLive、Image 2.5 作者外链。GitHub Actions 检查 lint、类型、配置测试、生产构建和 137 项 HTTP SEO 断言。本地与 CI 通过，Vercel 生产部署及公开 HTTP 检查通过。2026-09-11 的依赖审计为零告警。Vercel 市场条目的编辑更新独立维护，目前待处理。
+
+已有 0.2.x 项目升级前请阅读迁移说明，并把示例内容、生产域名和可选分析 ID 替换为自己的配置。
