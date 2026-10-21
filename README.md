@@ -60,7 +60,11 @@ NEXT_PUBLIC_URL="https://example.com"
 # NEXT_PUBLIC_INDEXABLE="false"
 # Optional: your own GA measurement ID; leave unset to disable analytics
 # NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="G-XXXXXXXXXX"
+# Optional: your Plausible script URL
+# NEXT_PUBLIC_PLAUSIBLE_SCRIPT=""
 ```
+
+Set `NEXT_PUBLIC_PLAUSIBLE_SCRIPT` at build time to load your Plausible script and initialization snippet in every page's head. Leave it unset to render neither script. Rebuild after changing it; existing Google Analytics configuration is independent.
 
 `NEXT_PUBLIC_URL` must be an HTTP(S) origin without a path, query, or credentials. Configure your real production domain before publishing. If omitted, Vercel deployments resolve their own project domain; local development falls back to `http://localhost:3000`. Preview deployments remain noindex even when the production URL is configured. Noindex pages allow crawling so robots can read that directive.
 
