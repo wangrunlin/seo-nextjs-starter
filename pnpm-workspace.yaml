@@ -3,6 +3,19 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - lucide-react@1.44.0
+  - '@next/env@16.4.5'
+  - '@next/eslint-plugin-next@16.4.5'
+  - '@next/swc-darwin-arm64@16.4.5'
+  - '@next/swc-darwin-x64@16.4.5'
+  - '@next/swc-linux-arm64-gnu@16.4.5'
+  - '@next/swc-linux-arm64-musl@16.4.5'
+  - '@next/swc-linux-x64-gnu@16.4.5'
+  - '@next/swc-linux-x64-musl@16.4.5'
+  - '@next/swc-win32-arm64-msvc@16.4.5'
+  - '@next/swc-win32-x64-msvc@16.4.5'
+  - '@next/third-parties@16.4.5'
+  - eslint-config-next@16.4.5
+  - next@16.4.5
 # Parent ranges still admit vulnerable releases. Each selector is two-sided so a
 # 1.x request cannot be rewritten onto 5.x. Values are floors, not exact pins.
 overrides:
@@ -10,3 +23,4 @@ overrides:
   "brace-expansion@>=5.0.0 <6.0.0": ^5.0.12
   "sharp@>=0.35.0 <0.36.0": ^0.35.5
   "source-map-js@>=1.0.0 <2.0.0": ^1.2.2
+  "zod@>=4 <4.6.6": ^4.6.6
